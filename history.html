@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U2 Presentation - History</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="fade-in">
+    <div class="container">
+        <h2>How did the group start?</h2>
+
+        <div id="historyText" class="hidden-text">
+            Well, in 1976, Larry Mullen Jr. wanted to form a band, so he started to look for musicians to start a group.
+        </div>
+    </div>
+
+    <button id="nextPageBtn" class="arrow-btn" style="display: none;" onclick="window.location.href='members.html'" aria-label="Next Page">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+        </svg>
+    </button>
+
+    <button id="revealBtn" class="reveal-btn" aria-label="Reveal History">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+        </svg>
+    </button>
+
+    <a href="index.html" class="arrow-btn" style="right: auto; left: 30px; transform: rotate(180deg);"
+        aria-label="Previous Page">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+        </svg>
+    </a>
+
+    <script>
+        const btn = document.getElementById('revealBtn');
+        const text = document.getElementById('historyText');
+        const nextBtn = document.getElementById('nextPageBtn');
+
+        btn.addEventListener('click', () => {
+            text.style.display = 'block';
+            btn.style.display = 'none';
+            nextBtn.style.display = 'flex';
+        });
+    </script>
+</body>
+
+</html>

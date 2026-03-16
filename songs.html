@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U2 Presentation - Popular Songs</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .songs-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .song-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            padding: 2rem;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .song-item:hover {
+            background: var(--glass-border);
+            transform: scale(1.02);
+            border-color: var(--accent-color);
+        }
+
+        .song-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .rank {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--accent-color);
+            min-width: 60px;
+        }
+
+        .song-info {
+            text-align: left;
+        }
+
+        .song-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .streams {
+            color: #888;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .intro-text {
+            font-size: 1.5rem;
+            color: #ccc;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body class="fade-in" style="height: auto; min-height: 100vh; overflow-y: auto; align-items: flex-start; padding-top: 5rem;">
+    <div class="container" style="max-width: 1000px;">
+        <h2>Most Popular Songs</h2>
+        <p class="intro-text">So, we talked about how the group started, the members of the band but… What are the most popular songs?</p>
+
+        <div class="songs-container">
+            <!-- 1st Place -->
+            <a href="https://www.youtube.com/watch?v=ujNeHIo7oTE" target="_blank" class="song-item" id="song-1">
+                <div class="rank">1</div>
+                <div class="song-info">
+                    <div class="song-title">With or Without You</div>
+                    <div class="streams">The band’s most-streamed track with over 1.22 billion Spotify streams</div>
+                </div>
+            </a>
+
+            <!-- 2nd Place -->
+            <a href="https://www.youtube.com/watch?v=e3-5YC_oHjE" target="_blank" class="song-item" id="song-2" style="transition-delay: 0.2s;">
+                <div class="rank">2</div>
+                <div class="song-info">
+                    <div class="song-title">I Still Haven't Found What I'm Looking For</div>
+                    <div class="streams">Over 662 million streams</div>
+                </div>
+            </a>
+
+            <!-- 3rd Place -->
+            <a href="https://www.youtube.com/watch?v=ZpDQJnI4OhU" target="_blank" class="song-item" id="song-3" style="transition-delay: 0.4s;">
+                <div class="rank">3</div>
+                <div class="song-info">
+                    <div class="song-title">One</div>
+                    <div class="streams">Over 652 million streams</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Link to Albums Page -->
+    <a href="albums.html" class="arrow-btn" aria-label="Go to Albums">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+        </svg>
+    </a>
+
+    <!-- Back to Members -->
+    <a href="members.html" class="arrow-btn" style="right: auto; left: 30px; transform: rotate(180deg);" aria-label="Previous Page">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Simple intersection observer to animate items on scroll/load
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.song-item').forEach(item => observer.observe(item));
+    </script>
+</body>
+</html>

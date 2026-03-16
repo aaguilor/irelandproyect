@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U2 Presentation - Iconic Concert</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .concert-showcase {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            padding: 3rem;
+            border-radius: 30px;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            animation: slideIn 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .concert-img {
+            width: 100%;
+            height: 400px;
+            background: #111;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed var(--glass-border);
+            color: #444;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .concert-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .concert-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .concert-description {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #eee;
+            margin-bottom: 1rem;
+        }
+
+        .era-badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body class="fade-in">
+    <div class="container" style="max-width: 1000px;">
+        <h2>The Greatest Live Performance</h2>
+        
+        <div class="concert-showcase">
+            <div class="era-badge">1992 – 1993</div>
+            <div class="concert-title">Zoo TV Tour</div>
+            
+            <div class="concert-img">
+                <img src="Concert.png" alt="Zoo TV Tour">
+            </div>
+
+            <p class="concert-description">
+                The <strong>Zoo TV Tour</strong> (1992–1993) is very famous and widely regarded as U2's most iconic concert tour.
+            </p>
+        </div>
+    </div>
+
+    <!-- Link to Fun Fact Page -->
+    <a href="fact.html" class="arrow-btn" aria-label="Go to Fun Fact">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+        </svg>
+    </a>
+
+    <!-- Back to Albums -->
+    <a href="albums.html" class="arrow-btn" style="right: auto; left: 30px; transform: rotate(180deg);" aria-label="Previous Page">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+        </svg>
+    </a>
+</body>
+</html>

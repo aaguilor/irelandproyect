@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U2 Presentation - Best-Selling Albums</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .albums-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .album-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .album-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .album-rank {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .album-cover-placeholder {
+            width: 180px;
+            height: 180px;
+            background: #1a1a1a;
+            border-radius: 10px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed var(--glass-border);
+            color: #555;
+            position: relative;
+        }
+
+        /* Vinyl disc effect behind the placeholder */
+        .album-cover-placeholder::before {
+            content: '';
+            position: absolute;
+            width: 170px;
+            height: 170px;
+            background: #000;
+            border-radius: 50%;
+            z-index: -1;
+            right: -20px;
+            transition: right 0.5s ease;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            background: repeating-radial-gradient(circle, #111, #111 2px, #222 3px, #111 4px);
+        }
+
+        .album-card:hover .album-cover-placeholder::before {
+            right: -40px;
+        }
+
+        .album-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            min-height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sales {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .intro-text {
+            font-size: 1.5rem;
+            color: #ccc;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body class="fade-in"
+    style="height: auto; min-height: 100vh; overflow-y: auto; align-items: flex-start; padding-top: 5rem;">
+    <div class="container" style="max-width: 1100px;">
+        <h2>The Best-Selling Albums</h2>
+        <p class="intro-text">So, we talked about how the group started, the members of the band, the popular songs but…
+            What are the best-selling albums?</p>
+
+        <div class="albums-container">
+            <!-- 1st Place -->
+            <div class="album-card" id="album-1">
+                <div class="album-rank">1</div>
+                <div class="album-cover-placeholder">
+                    <img src="Album1.png" alt="The Joshua Tree"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="album-title">The Joshua Tree</div>
+                <div class="sales">25–27 million copies sold</div>
+            </div>
+
+            <!-- 2nd Place -->
+            <div class="album-card" id="album-2" style="transition-delay: 0.2s;">
+                <div class="album-rank">2</div>
+                <div class="album-cover-placeholder">
+                    <img src="Album2.png" alt="Achtung Baby"
+                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="album-title">Achtung Baby</div>
+                <div class="sales">17–18 million copies sold</div>
+            </div>
+
+            <!-- 3rd Place -->
+            <div class="album-card" id="album-3" style="transition-delay: 0.4s;">
+                <div class="album-rank">3</div>
+                <div class="album-cover-placeholder">
+                    <img src="Album3.png" alt="All That You Can’t Leave Behind" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="album-title">All That You Can’t Leave Behind</div>
+                <div class="sales">12 million copies sold</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to Concert Page -->
+    <a href="concert.html" class="arrow-btn" aria-label="Go to Concert">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+        </svg>
+    </a>
+
+    <!-- Back to Songs -->
+    <a href="songs.html" class="arrow-btn" style="right: auto; left: 30px; transform: rotate(180deg);"
+        aria-label="Previous Page">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" />
+        </svg>
+    </a>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.album-card').forEach(item => observer.observe(item));
+    </script>
+</body>
+
+</html>

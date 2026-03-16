@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U2 Presentation - Members</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="fade-in" style="height: auto; min-height: 100vh; overflow-y: auto; align-items: flex-start; padding-top: 5rem;">
+    <div class="container">
+        <h2>Members of the Band</h2>
+        <p style="color: #888; margin-bottom: 2rem;">Click the cards to reveal the members</p>
+
+        <div class="members-grid">
+            <!-- Bono -->
+            <div class="card" onclick="this.classList.toggle('flipped')">
+                <div class="card-inner">
+                    <div class="card-front"></div>
+                    <div class="card-back">
+                        <div class="member-img-small">
+                            <img src="Bono.png" alt="Bono">
+                        </div>
+                        <div class="member-name">Bono</div>
+                        <div class="member-role">Vocalist and guitarist</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Edge -->
+            <div class="card" onclick="this.classList.toggle('flipped')">
+                <div class="card-inner">
+                    <div class="card-front"></div>
+                    <div class="card-back">
+                        <div class="member-img-small">
+                            <img src="TheEdge.png" alt="The Edge">
+                        </div>
+                        <div class="member-name">The Edge</div>
+                        <div class="member-role">Principal guitarist, keyboardist and chorus singer</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adam Clayton -->
+            <div class="card" onclick="this.classList.toggle('flipped')">
+                <div class="card-inner">
+                    <div class="card-front"></div>
+                    <div class="card-back">
+                        <div class="member-img-small">
+                            <img src="AdamClayton.png" alt="Adam Clayton">
+                        </div>
+                        <div class="member-name">Adam Clayton</div>
+                        <div class="member-role">Bassist</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Larry Mullen Jr. -->
+            <div class="card" onclick="this.classList.toggle('flipped')">
+                <div class="card-inner">
+                    <div class="card-front"></div>
+                    <div class="card-back">
+                        <div class="member-img-small">
+                            <img src="LarryMullenJr.png" alt="Larry Mullen Jr.">
+                        </div>
+                        <div class="member-name">LarryMullenJr</div>
+                        <div class="member-role">Drummer and percussionist</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to Songs Page -->
+    <a href="songs.html" class="arrow-btn" aria-label="Go to Songs">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+        </svg>
+    </a>
+
+    <!-- Back to History Link -->
+    <a href="history.html" class="arrow-btn" style="right: auto; left: 30px; transform: rotate(180deg);" aria-label="Previous Page">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+        </svg>
+    </a>
+</body>
+</html>

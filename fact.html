@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U2 Presentation - Fun Fact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="fade-in">
+    <div class="container">
+        <h2>Fun Fact</h2>
+        
+        <div id="factText" class="hidden-text" style="max-width: 700px; margin: 2rem auto; font-size: 1.5rem;">
+            Did you know they didn’t know how to play when they formed the band?! They wrote their own songs because they weren't good enough to play other people's songs.
+        </div>
+    </div>
+
+    <!-- Reveal Trigger -->
+    <button id="revealBtn" class="reveal-btn" aria-label="Reveal Fact">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+        </svg>
+    </button>
+
+    <!-- Navigation to Thanks -->
+    <a id="thanksLink" href="thanks.html" class="arrow-btn" style="display: none;" aria-label="Next Page">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+        </svg>
+    </a>
+
+    <!-- Back to Concert -->
+    <a href="concert.html" class="arrow-btn" style="right: auto; left: 30px; transform: rotate(180deg);" aria-label="Previous Page">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+        </svg>
+    </a>
+
+    <script>
+        const btn = document.getElementById('revealBtn');
+        const text = document.getElementById('factText');
+        const nextLink = document.getElementById('thanksLink');
+
+        btn.addEventListener('click', () => {
+            text.style.display = 'block';
+            btn.style.display = 'none';
+            nextLink.style.display = 'flex';
+        });
+    </script>
+</body>
+</html>
