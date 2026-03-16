@@ -271,3 +271,57 @@ h2 {
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+/* Music Control */
+.music-controls {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.music-btn {
+    background: var(--glass-bg);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.music-btn:hover {
+    background: var(--glass-border);
+    transform: scale(1.1);
+    color: var(--accent-color);
+}
+
+.music-btn.playing {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px rgba(227, 27, 35, 0.3);
+}
+
+.music-btn.playing svg {
+    animation: pulse 1.5s infinite;
+}
+
+.reset-btn svg {
+    transition: transform 0.5s ease;
+}
+
+.reset-btn:active svg {
+    transform: rotate(-360deg);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
